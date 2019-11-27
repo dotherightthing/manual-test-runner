@@ -1,4 +1,6 @@
-# untitled
+# Manual Test Runner (MTR)
+
+Vue app to manually run UI tests.
 
 ## Project setup
 ```
