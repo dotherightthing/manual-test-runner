@@ -1,8 +1,8 @@
 <template>
-  <div class="b-results">
+  <div class="b-results" :aria-hidden="[!isVisible]">
     <h2>Results</h2>
     <p>{{msg}}</p>
-    <PanelVisibilityControl />
+    <PanelVisibilityControl @toggle-visibility="handleToggleVisibility" />
   </div>
 </template>
 
@@ -11,11 +11,21 @@
 
   export default {
     name: 'Results',
+    data() {
+      return {
+        isVisible: true
+      }
+    },
     props: {
       msg: String
     },
     components: {
       PanelVisibilityControl
+    },
+    methods: {
+      handleToggleVisibility() {
+        this.isVisible = !this.isVisible;
+      }
     }
   }
 </script>

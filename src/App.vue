@@ -55,6 +55,9 @@ export default {
   text-align: center;
   color: #2c3e50;
 
+  [aria-hidden="true"] {
+    opacity: .5;
+  }
   .l-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
