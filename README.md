@@ -2,6 +2,8 @@
 
 Vue app to manually run UI tests.
 
+See [WebStorm notes](https://gist.github.com/dotherightthing/4bd2ea93dd480cf9b0c5d705683aaedb).
+
 ## Project setup
 ```
 npm install
