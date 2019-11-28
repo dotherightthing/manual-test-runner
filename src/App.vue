@@ -48,6 +48,11 @@ export default {
   --margin-sub-container: .5rem 0;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -58,9 +63,15 @@ export default {
   [aria-hidden="true"] {
     opacity: .5;
   }
+
+  > .l-grid {
+    min-height: 100vh;
+  }
+
   .l-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 25% 75%;
     grid-column-gap: 2rem;
     grid-row-gap: 1px;
 

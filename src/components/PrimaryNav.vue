@@ -33,6 +33,8 @@ export default {
   background-color: var(--color-fill-light);
 
   &__logo {
+    display: grid;
+    align-items: end;
     background-color: var(--color-brand);
     font-weight: bold;
   }
@@ -50,6 +52,8 @@ export default {
     }
 
     &__item {
+      display: grid;
+      align-items: end;
       background-color: var(--color-fill-mid);
     }
   }
@@ -58,7 +62,8 @@ export default {
     display: block;
     text-decoration: none;
     color: var(--color-page);
-    padding: 4rem 1rem 2rem;
+    padding: var(--padding-container);
+    padding-bottom: 2rem;
   }
 }
 </style>
