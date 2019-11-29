@@ -81,7 +81,7 @@ body {
     }
 
     &--left {
-      grid-column: span 3;
+      grid-column: span 4;
       background-color: var(--color-fill-light);
       text-align: left;
     }
@@ -92,9 +92,15 @@ body {
     }
 
     &--right {
-      grid-column: span 3;
+      grid-column: span 2;
       text-align: left;
     }
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 100;
+    margin: 1rem 0 0;
   }
 }
 </style>

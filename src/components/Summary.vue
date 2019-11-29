@@ -1,8 +1,8 @@
 <template>
   <div class="b-summary" :aria-hidden="[!panelIsVisible]">
-    <h1 class="b-summary__title">
+    <h2 class="b-summary__title">
       {{ title }}
-    </h1>
+    </h2>
     <p class="b-summary__summary">
       {{ summary }}
     </p>
@@ -41,10 +41,10 @@
 <style lang="scss">
 .b-summary {
   padding: var(--padding-container);
+  padding-top: 0;
 
-  &__title {
-    font-size: 3rem;
-    margin: 1rem 0 0;
+  h2 {
+     font-weight: 900;
   }
 
   &__summary {
