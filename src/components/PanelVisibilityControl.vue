@@ -1,7 +1,15 @@
 <template>
   <div class="b-panel-visibility-control">
-    <p>[icon] This panel is hidden from screenreaders.
-      <button type="button" v-on:click="toggleParentVisibility">Reveal this panel</button></p>
+    <p>[icon] This panel is
+       <span v-if="panelIsVisible">shown to</span>
+       <span v-else>hidden from</span>
+        screenreaders.
+      <button type="button" v-on:click="toggleParentVisibility">
+          <span v-if="panelIsVisible">Hide</span>
+          <span v-else>Show</span>
+           panel
+      </button>
+    </p>
   </div>
 </template>
 
@@ -11,7 +19,9 @@
   // export as a JavaScript module
   export default {
     name: 'PanelVisibilityControl',
-    props: {},
+    props: {
+        panelIsVisible: Boolean
+    },
     methods: {
       toggleParentVisibility: function () {
         // `this` inside methods points to the Vue instance

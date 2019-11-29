@@ -1,12 +1,12 @@
 <template>
-  <div class="b-summary" :aria-hidden="[!isVisible]">
+  <div class="b-summary" :aria-hidden="[!panelIsVisible]">
     <h1 class="b-summary__title">
       {{ title }}
     </h1>
     <p class="b-summary__summary">
       {{ summary }}
     </p>
-    <PanelVisibilityControl @toggle-visibility="handleToggleVisibility" />
+    <PanelVisibilityControl @toggle-visibility="handleToggleVisibility" :panelIsVisible="this.panelIsVisible" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@
     name: 'Summary',
     data() {
       return {
-        isVisible: true
+        panelIsVisible: true
       }
     },
     props: {
@@ -31,7 +31,7 @@
     },
     methods: {
       handleToggleVisibility() {
-        this.isVisible = !this.isVisible;
+        this.panelIsVisible = !this.panelIsVisible;
       }
     }
   }

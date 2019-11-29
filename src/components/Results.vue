@@ -1,8 +1,8 @@
 <template>
-  <div class="b-results" :aria-hidden="[!isVisible]">
+  <div class="b-results" :aria-hidden="[!panelIsVisible]">
     <h2>Results</h2>
     <p>{{msg}}</p>
-    <PanelVisibilityControl @toggle-visibility="handleToggleVisibility" />
+    <PanelVisibilityControl @toggle-visibility="handleToggleVisibility" :panelIsVisible="this.panelIsVisible" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@
     name: 'Results',
     data() {
       return {
-        isVisible: true
+        panelIsVisible: true
       }
     },
     props: {
@@ -24,7 +24,7 @@
     },
     methods: {
       handleToggleVisibility() {
-        this.isVisible = !this.isVisible;
+        this.panelIsVisible = !this.panelIsVisible;
       }
     }
   }
