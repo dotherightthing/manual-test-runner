@@ -1,38 +1,22 @@
 <template>
-  <div class="b-summary" :aria-hidden="[!panelIsVisible]">
+  <div class="b-summary">
     <h2 class="b-summary__title">
       {{ title }}
     </h2>
     <p class="b-summary__summary">
       {{ summary }}
     </p>
-    <PanelVisibilityControl @toggle-visibility="handleToggleVisibility" :panelIsVisible="this.panelIsVisible" />
   </div>
 </template>
 
 <script>
   /* eslint-disable no-console */
 
-  import PanelVisibilityControl from './PanelVisibilityControl.vue'
-
   export default {
     name: 'Summary',
-    data() {
-      return {
-        panelIsVisible: true
-      }
-    },
     props: {
       title: String,
       summary: String
-    },
-    components: {
-      PanelVisibilityControl
-    },
-    methods: {
-      handleToggleVisibility() {
-        this.panelIsVisible = !this.panelIsVisible;
-      }
     }
   }
 </script>

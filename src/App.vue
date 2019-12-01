@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <div class="l-grid">
-      <PrimaryNav class="l-grid--full" section="Tests" page="Forms" />
-      <div class="l-grid--left">
+      <PrimaryNav class="header-nav" section="Tests" page="Forms" :aria-hidden="this.uiVerbosity !== 'full'" />
+      <Tools class="header-controls" @set-ui-verbosity="setUiVerbosity" uiVerbosity="this.uiVerbosity" />
+      <div class="sidebar-1" :aria-hidden="this.uiVerbosity !== 'full'">
         <Summary title="Label" summary="Testing different ways of using labels." />
       </div>
-      <div class="l-grid--center">
+      <div class="content">
         <h2>Tests</h2>
         <Test msg="Tests go here"/>
       </div>
-      <div class="l-grid--right">
+      <div class="sidebar-2" :aria-hidden="this.uiVerbosity !== 'full'">
         <Results msg="Results table goes here" />
       </div>
     </div>
@@ -17,18 +18,35 @@
 </template>
 
 <script>
-  import Test from './components/Test.vue'
+  /* eslint-disable no-console */
+
   import PrimaryNav from './components/PrimaryNav.vue'
+  import Tools from './components/Tools.vue'
   import Summary from './components/Summary.vue'
+  import Test from './components/Test.vue'
   import Results from './components/Results.vue'
 
 export default {
   name: 'app',
   components: {
-    Test,
     PrimaryNav,
+    Tools,
     Summary,
-    Results
+    Test,
+    Results,
+  },
+  // props flow down and can't be changed
+  // but data is the private memory of a component
+  // and can be changed - in this case the values is toggled
+  data() {
+    return {
+      uiVerbosity: 'full' // default value
+    }
+  },
+  methods: {
+    setUiVerbosity(scope) {
+      this.uiVerbosity = scope;
+    }
   }
 }
 </script>
@@ -65,36 +83,41 @@ body {
   }
 
   > .l-grid {
+    display: grid;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    grid-template-columns: repeat(6, 2fr);
+    grid-template-rows: 25% 75%;
+    grid-template-areas:
+      "header-nav header-nav header-nav header-controls header-controls header-controls"
+      "sidebar-1 content content content content sidebar-2";
     min-height: 100vh;
   }
 
-  .l-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 25% 75%;
-    grid-column-gap: 2rem;
-    grid-row-gap: 1px;
+  .header-nav {
+    justify-content: flex-start;
+    grid-area: header-nav;
+  }
 
-    &--full {
-      grid-column: span 12;
-      justify-content: flex-start;
-    }
+  .header-controls {
+    justify-content: flex-end;
+    grid-area: header-controls;
+  }
 
-    &--left {
-      grid-column: span 4;
-      background-color: var(--color-fill-light);
-      text-align: left;
-    }
+  .sidebar-1 {
+    background-color: var(--color-fill-light);
+    text-align: left;
+    grid-area: sidebar-1;
+  }
 
-    &--center {
-      grid-column: span 6;
-      text-align: left;
-    }
+  .content {
+    text-align: left;
+    grid-area: content;
+  }
 
-    &--right {
-      grid-column: span 2;
-      text-align: left;
-    }
+  .sidebar-2 {
+    text-align: left;
+    grid-area: sidebar-2;
   }
 
   h2 {

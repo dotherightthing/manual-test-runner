@@ -23,6 +23,10 @@ npm run build
 ```
 npm run lint
 ```
+### Runs unit tests in Jest
+```
+npm run test
+```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

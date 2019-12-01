@@ -1,31 +1,15 @@
 <template>
-  <div class="b-results" :aria-hidden="[!panelIsVisible]">
+  <div class="b-results">
     <h2>Results</h2>
     <p>{{msg}}</p>
-    <PanelVisibilityControl @toggle-visibility="handleToggleVisibility" :panelIsVisible="this.panelIsVisible" />
   </div>
 </template>
 
 <script>
-  import PanelVisibilityControl from './PanelVisibilityControl.vue'
-
   export default {
     name: 'Results',
-    data() {
-      return {
-        panelIsVisible: true
-      }
-    },
     props: {
       msg: String
-    },
-    components: {
-      PanelVisibilityControl
-    },
-    methods: {
-      handleToggleVisibility() {
-        this.panelIsVisible = !this.panelIsVisible;
-      }
     }
   }
 </script>
