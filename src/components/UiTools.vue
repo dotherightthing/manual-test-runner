@@ -7,27 +7,33 @@
 <script>
   /* eslint-disable no-console */
 
+  /**
+   * UI Tools
+   *
+   * https://github.com/dotherightthing/manual-test-runner/issues/7
+   */
+
   import UiVerbosityControl from './UiVerbosityControl.vue'
 
-export default {
-  name: 'UiTools',
-  props: {
-    section: String,
-    page: String,
-    uiVerbosity: String
-  },
-  components: {
-    UiVerbosityControl
-  },
-  methods: {
-    setUiVerbosity: function (scope) {
-      // emit event to parent (App)
-      // `this` inside methods points to the Vue instance
-      // args can be passed as a second argument
-      this.$emit('set-ui-verbosity', scope);
+  export default {
+    name: 'UiTools',
+    props: {
+      section: String,
+      page: String,
+      uiVerbosity: String
+    },
+    components: {
+      UiVerbosityControl
+    },
+    methods: {
+      setUiVerbosity: function (scope) {
+        // emit event to parent (App)
+        // `this` inside methods points to the Vue instance
+        // args can be passed as a second argument
+        this.$emit('set-ui-verbosity', scope);
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -17,6 +17,8 @@
 
     --padding-sub-container: .5rem;
     --margin-sub-container: .5rem 0;
+
+    --component-border: 1px dotted;
   }
 
   body {
@@ -44,7 +46,7 @@
     grid-template-rows: 25% 75%;
     grid-template-areas:
             "header-nav header-nav header-nav header-controls header-controls header-controls"
-            "sidebar-1 content content content content sidebar-2";
+            "sidebar-1 content content content sidebar-2 sidebar-2";
     min-height: 100vh;
   }
 
@@ -75,8 +77,8 @@
   }
 
   h2 {
-    font-size: 3rem;
-    font-weight: 100;
+    font-size: 1.5rem;
+    font-weight: bold;
     margin: 1rem 0 0;
   }
 </style>

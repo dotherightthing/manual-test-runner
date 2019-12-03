@@ -14,6 +14,14 @@
   </div>
 </template>
 
+<script>
+  /**
+   * Primary Navigation
+   *
+   * https://github.com/dotherightthing/manual-test-runner/issues/6
+   */
+</script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .b-primary-nav {

@@ -28,6 +28,12 @@
 <script>
   /* eslint-disable no-console */
 
+  /**
+   * UI Verbosity Control
+   *
+   * https://github.com/dotherightthing/manual-test-runner/issues/8
+   */
+
   // export as a JavaScript module
   // @todo neither radio button is selected onload
   export default {

@@ -1,9 +1,9 @@
 <template>
-  <div class="b-summary">
-    <h2 class="b-summary__title">
+  <div class="b-test-introduction">
+    <h2 class="b-test-introduction__title">
       {{ title }}
     </h2>
-    <p class="b-summary__summary">
+    <p class="b-test-introduction__summary">
       {{ summary }}
     </p>
   </div>
@@ -11,6 +11,12 @@
 
 <script>
   /* eslint-disable no-console */
+
+  /**
+   * Test Introduction
+   *
+   * https://github.com/dotherightthing/manual-test-runner/issues/4
+   */
 
   export default {
     name: 'TestIntroduction',
@@ -23,9 +29,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-.b-summary {
+.b-test-introduction {
   padding: var(--padding-container);
-  padding-top: 0;
+  border: var(--component-border);
 
   h2 {
      font-weight: 900;
