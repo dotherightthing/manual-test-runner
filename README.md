@@ -2,9 +2,28 @@
 
 Vue app to manually run UI tests.
 
-See [WebStorm notes](https://gist.github.com/dotherightthing/4bd2ea93dd480cf9b0c5d705683aaedb).
-
 ## Project setup
+
+This project uses Vue CLI, to:
+
+* configure Webpack
+* enable authoring in Single File Vue components
+* enable authoring in SCSS
+* enable authoring in ES6
+* enable Hot Module Replacement during development
+
+This project was set up via WebStorm, which ran the Vue CLI command:
+
+WebStorm: File > New > Project > Vue.js
+
+* Node interpreter: `node /usr/local/bin/node`
+* Vue CLI: `/usr/local/lib/node_modules/@vue/cli`
+* Use the default project setup (`babel, eslint`)
+
+Note: The default project setup excludes `router` and `vuex` (reactive state storage). Install these via Vue UI's dedicated buttons at http://localhost:8000/plugins. 
+
+## Project installation
+
 ```
 npm install
 ```
@@ -26,6 +45,11 @@ npm run lint
 ### Runs unit tests in Jest
 ```
 npm run test
+```
+
+### Open Vue UI
+```
+vue ui
 ```
 
 ### Customize configuration

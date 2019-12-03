@@ -1,28 +1,18 @@
 <template>
   <div class="b-primary-nav">
     <div class="b-primary-nav__logo">
-      <a href="/" class="b-primary-nav__link">DTRT</a>
+      <router-link to="/" class="b-primary-nav__link">DTRT</router-link>
     </div>
     <ul class="b-primary-nav__list">
       <li class="b-primary-nav__list__item">
-        <a href="#" class="b-primary-nav__link">{{ section }}</a>
+        <router-link to="/" class="b-primary-nav__link">Tests</router-link>
       </li>
       <li class="b-primary-nav__list__item">
-        <a href="#" class="b-primary-nav__link">{{ page }}</a>
+        <router-link to="/about" class="b-primary-nav__link">About</router-link>
       </li>
     </ul>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'PrimaryNav',
-  props: {
-    section: String,
-    page: String
-  }
-}
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
@@ -64,6 +54,10 @@ export default {
     color: var(--color-page);
     padding: var(--padding-container);
     padding-bottom: 2rem;
+
+    &.router-link-exact-active {
+      font-weight: bold;
+    }
   }
 }
 </style>
