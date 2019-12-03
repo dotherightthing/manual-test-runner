@@ -1,7 +1,13 @@
 <template>
-  <div class="b-test-importer">
-    <p>{{ msg }}</p>
-  </div>
+  <form class="b-test-importer">
+    <fieldset>
+      <legend>{{ msg }}</legend>
+      <select>
+        <option>Test name</option>
+      </select>
+      <button type="button">Import</button>
+    </fieldset>
+  </form>
 </template>
 
 <script>

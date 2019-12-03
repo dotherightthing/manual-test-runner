@@ -1,6 +1,18 @@
 <template>
   <div class="b-test-results-grid">
-    <p>{{msg}}</p>
+    <table>
+      <summary>{{msg}}</summary>
+      <thead>
+      <tr>
+        <th>Header</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Cell</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 

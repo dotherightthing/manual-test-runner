@@ -1,7 +1,7 @@
 <template>
   <div class="b-primary-nav">
     <div class="b-primary-nav__logo">
-      <router-link to="/" class="b-primary-nav__link">DTRT</router-link>
+      <router-link to="/" class="b-primary-nav__link">MTR</router-link>
     </div>
     <ul class="b-primary-nav__list">
       <li class="b-primary-nav__list__item">

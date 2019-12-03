@@ -1,5 +1,6 @@
 <template>
   <div class="b-test-viewer">
+    <!-- eg https://raw.githubusercontent.com/dotherightthing/fieldset-tests/master/index.html -->
     <p>{{ msg }}</p>
   </div>
 </template>

@@ -1,7 +1,13 @@
 <template>
-  <div class="b-test-version-selector">
-    <p>{{ msg }}</p>
-  </div>
+  <form class="b-test-version-selector">
+    <fieldset>
+      <legend>{{ msg }}</legend>
+      <select>
+        <option>Test version</option>
+      </select>
+      <button type="button">Import</button>
+    </fieldset>
+  </form>
 </template>
 
 <script>
