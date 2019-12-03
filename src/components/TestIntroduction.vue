@@ -13,7 +13,7 @@
   /* eslint-disable no-console */
 
   export default {
-    name: 'Summary',
+    name: 'TestIntroduction',
     props: {
       title: String,
       summary: String

@@ -1,23 +1,23 @@
 <template>
   <form class="b-tools">
-    <uiVerbosityControl uiVerbosity="this.uiVerbosity" @set-ui-verbosity="setUiVerbosity" />
+    <UiVerbosityControl uiVerbosity="this.uiVerbosity" @set-ui-verbosity="setUiVerbosity" />
   </form>
 </template>
 
 <script>
   /* eslint-disable no-console */
 
-  import uiVerbosityControl from './uiVerbosityControl.vue'
+  import UiVerbosityControl from './UiVerbosityControl.vue'
 
 export default {
-  name: 'PrimaryNav',
+  name: 'UiTools',
   props: {
     section: String,
     page: String,
     uiVerbosity: String
   },
   components: {
-    uiVerbosityControl
+    UiVerbosityControl
   },
   methods: {
     setUiVerbosity: function (scope) {

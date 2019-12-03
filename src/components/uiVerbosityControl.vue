@@ -31,7 +31,7 @@
   // export as a JavaScript module
   // @todo neither radio button is selected onload
   export default {
-    name: 'uiVerbosityControl',
+    name: 'UiVerbosityControl',
     props: {
         uiVerbosity: String // this.uiVerbosity
     },

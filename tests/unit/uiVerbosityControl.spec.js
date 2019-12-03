@@ -2,9 +2,9 @@
  * Unit tests for uiVerbosityControl
  */
 import { shallowMount } from '@vue/test-utils'
-import uiVerbosityControl from '@/components/uiVerbosityControl.vue'
+import uiVerbosityControl from '@/components/UiVerbosityControl.vue'
 
-describe('uiVerbosityControl.vue', () => {
+describe('UiVerbosityControl.vue', () => {
   it('When the component is mounted, the full verbosity option is checked', () => {
     const wrapper = shallowMount(uiVerbosityControl, {
       propsData: { uiVerbosity }

@@ -2,9 +2,9 @@
   <div id="app">
     <div class="l-grid">
       <PrimaryNav class="header-nav" section="Tests" page="Forms" :aria-hidden="this.uiVerbosity !== 'full'" />
-      <Tools class="header-controls" @set-ui-verbosity="setUiVerbosity" uiVerbosity="this.uiVerbosity" />
+      <UiTools class="header-controls" @set-ui-verbosity="setUiVerbosity" uiVerbosity="this.uiVerbosity" />
       <div class="sidebar-1" :aria-hidden="this.uiVerbosity !== 'full'">
-        <Summary title="Label" summary="Testing different ways of using labels." />
+        <TestIntroduction title="Label" summary="Testing different ways of using labels." />
       </div>
       <div class="content">
         <h2>Tests</h2>
@@ -21,8 +21,8 @@
   /* eslint-disable no-console */
 
   import PrimaryNav from './components/PrimaryNav.vue'
-  import Tools from './components/Tools.vue'
-  import Summary from './components/Summary.vue'
+  import UiTools from './components/UiTools.vue'
+  import TestIntroduction from './components/TestIntroduction.vue'
   import Test from './components/Test.vue'
   import Results from './components/Results.vue'
 
@@ -30,8 +30,8 @@ export default {
   name: 'app',
   components: {
     PrimaryNav,
-    Tools,
-    Summary,
+    UiTools,
+    TestIntroduction,
     Test,
     Results,
   },
