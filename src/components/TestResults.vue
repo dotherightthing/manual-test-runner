@@ -1,6 +1,6 @@
 <template>
   <div class="b-test-results">
-    <h2>{{msg}}</h2>
+    <h2 class="legend">{{msg}}</h2>
     <TestResultsGrid msg="Results grid"/>
   </div>
 </template>
