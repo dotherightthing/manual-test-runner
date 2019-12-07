@@ -1,0 +1,16 @@
+{
+  "repos": [
+    {
+      "name": "fieldset-tests",
+      "title": "Fieldset tests",
+      "file": "index.html",
+      "raw": "<fieldset><legend>This is a test</legend></fieldset>"
+    },
+    {
+      "name": "label-tests",
+      "title": "Label tests",
+      "file": "index.html",
+      "raw": "<label>This is another test</label>"
+    }
+  ]
+}

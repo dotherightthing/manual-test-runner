@@ -20,7 +20,14 @@ WebStorm: File > New > Project > Vue.js
 * Vue CLI: `/usr/local/lib/node_modules/@vue/cli`
 * Use the default project setup (`babel, eslint`)
 
-Note: The default project setup excludes `router` and `vuex` (reactive state storage). Install these via Vue UI's dedicated buttons at http://localhost:8000/plugins. 
+Note: The default project setup excludes `router` and `vuex` (reactive global state storage = single source of truth).
+
+These were install these via Vue UI's dedicated buttons at http://localhost:8000/plugins.
+
+Also installed:
+
+* `json-server `- mock server which serves json through REST routes: `npm run serve:json`. If the default port of `3000` is busy, change the port in `package.json` and `.env.local`.
+* `axios` - promise based HTTP client for the browser and node.js - [Vue tutorial](https://www.vuemastery.com/courses/real-world-vue-js/API-calls-with-Axios)
 
 ## Project installation
 
