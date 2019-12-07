@@ -1,0 +1,45 @@
+body {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0 0;
+}
+
+[aria-hidden="true"] {
+  opacity: .5;
+}
+
+.header-nav {
+  justify-content: flex-start;
+  grid-area: header-nav;
+}
+
+.header-controls {
+  justify-content: flex-end;
+  grid-area: header-controls;
+}
+
+.sidebar-1 {
+  background-color: var(--color-fill-light);
+  text-align: left;
+  grid-area: sidebar-1;
+}
+
+.content {
+  text-align: left;
+  grid-area: content;
+}
+
+.sidebar-2 {
+  text-align: left;
+  grid-area: sidebar-2;
+}

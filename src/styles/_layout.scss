@@ -1,0 +1,35 @@
+.l-grid {
+  display: grid;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  grid-template-columns: repeat(6, 2fr);
+  grid-template-rows: 25% 75%;
+  grid-template-areas:
+          "header-nav header-nav header-nav header-controls header-controls header-controls"
+          "sidebar-1 content content content sidebar-2 sidebar-2";
+  min-height: 100vh;
+}
+
+.l-grid-radios {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: baseline;
+  grid-column-gap: .25rem;
+
+  &--toggle {
+    // @extend .l-form-radios; -- ?
+
+    label {
+      padding-top: var(--padding-sub-container);
+      padding-bottom: var(--padding-sub-container);
+
+      &:last-of-type {
+        order: 1; // align right
+      }
+    }
+  }
+}
+
+.l-center {
+  text-align: center;
+}

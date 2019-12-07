@@ -1,0 +1,16 @@
+fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+legend,
+.legend {
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+label {
+  cursor: pointer;
+}
