@@ -15,6 +15,10 @@ export default new Vuex.Store({
     testMode: 'edit'
   },
   mutations: {
+    // Mutations are synchronous
+    // Always put mutations inside actions
+    // to minimise refactoring in the future
+    //
     // it's common practice to use UPPERCASE or CamelCase here
     // to differentiate creating a mutation from calling an action
     SET_TEST_MODE(state, mode) {
@@ -22,6 +26,19 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    // Actions are asynchronous
+
+    /**
+     * Update Test Mode
+     *
+     * @param {object} {state, commit} - context object
+     * @param {string} value - payload
+     */
+    updateTestMode({ state, commit }, value) {
+      if (state.testMode) {
+        commit('SET_TEST_MODE', value);
+      }
+    }
   },
   modules: {
   },

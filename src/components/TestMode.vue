@@ -57,7 +57,7 @@
         // <button type="button" @click="setTestMode">
         // v-on -> @
         setTestMode: function (mode) {
-            this.$store.commit('SET_TEST_MODE', mode );
+            this.$store.dispatch('updateTestMode', mode );
         }
     },
     computed: {
