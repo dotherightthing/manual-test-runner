@@ -1,5 +1,5 @@
 <template>
-  <form class="b-test-builder-form" @submit.prevent="createTest">
+  <form class="b-test-builder-form b-panel" @submit.prevent="createTest">
     <fieldset>
       <legend>Test builder</legend>
       <div>
@@ -77,7 +77,5 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .b-test-builder-form {
-    padding: var(--padding-sub-container);
-    border: var(--component-border);
   }
 </style>

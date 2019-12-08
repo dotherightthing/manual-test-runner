@@ -1,5 +1,5 @@
 <template>
-  <div class="b-test">
+  <div class="b-test b-panel">
     <h2 class="legend">Test fixture</h2>
     <TestImporter msg="Import test fixture from Github"/>
     <TestVersionSelector msg="Select fixture version"/>
@@ -25,7 +25,5 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .b-test {
-    padding: var(--padding-container);
-    border: var(--component-border);
   }
 </style>

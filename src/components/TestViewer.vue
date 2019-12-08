@@ -1,5 +1,5 @@
 <template>
-  <div class="b-test-viewer">
+  <div class="b-test-viewer b-panel">
     <!-- eg https://raw.githubusercontent.com/dotherightthing/fieldset-tests/master/index.html -->
     <p>{{ msg }}</p>
   </div>
@@ -22,7 +22,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .b-test-viewer {
-    padding: var(--padding-sub-container);
-    border: var(--component-border);
   }
 </style>

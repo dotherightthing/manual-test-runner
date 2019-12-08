@@ -1,5 +1,5 @@
 <template>
-  <form class="b-test-importer">
+  <form class="b-test-importer b-panel">
     <fieldset>
       <legend>{{ msg }}</legend>
       <select>
@@ -48,7 +48,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .b-test-importer {
-    padding: var(--padding-sub-container);
-    border: var(--component-border);
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="b-test-results">
+  <div class="b-test-results b-panel">
     <h2 class="legend">{{msg}}</h2>
     <TestResultsGrid msg="Results grid"/>
   </div>
@@ -27,7 +27,5 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .b-test-results {
-    padding: var(--padding-container);
-    border: var(--component-border);
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="b-test-introduction l-block-disabled__wrapper">
+  <div class="b-test-introduction b-panel l-block-disabled__wrapper">
     <h2 class="b-test-introduction__title">
       {{ title }}
     </h2>
@@ -35,8 +35,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .b-test-introduction {
-  padding: var(--padding-container);
-  border: var(--component-border);
 
   h2 {
      font-weight: 900;

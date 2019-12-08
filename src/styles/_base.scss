@@ -2,6 +2,10 @@ html {
   font-size: var(--base-sizing);
 }
 
+html * {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

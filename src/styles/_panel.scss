@@ -1,6 +1,13 @@
-table {
-  th {
-    text-align: left;
-    background-color: var(--color-fill-light);
+.b-panel {
+  padding: var(--padding-container);
+  background: rgba(0, 0, 0, .05);
+  box-shadow: var(--shadow-thin);
+  margin: var(--padding-sub-container);
+
+  .b-panel {
+    background: rgba(0, 0, 0, .075);
+    padding: var(--padding-sub-container);
+    margin-left: 0;
+    margin-right: 0;
   }
 }
