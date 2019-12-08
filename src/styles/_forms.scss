@@ -15,7 +15,7 @@ fieldset {
 legend,
 .legend {
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: var(--text-small-upper);
   font-weight: bold;
 }
 

@@ -1,4 +1,6 @@
 :root {
+  --base-sizing: 1.1em;
+
   --color-brand: rgba(0, 166, 250, 1);
   --color-page: rgba(255, 255, 255, 1);
   --color-fill-light: rgba(0, 0, 0, .1);
@@ -14,9 +16,9 @@
   --component-border: 1px dotted;
 
   --text-small: .9rem;
-  --text-small-upper: .8rem;
+  --text-small-upper: .9rem;
   --text-large: 1.1rem;
-  --text-heading-medium: 1.5rem;
+  --text-heading-medium: 1.6rem;
 
   --block-disabled-overlay: rgba(255, 255, 255, .5);
 }
