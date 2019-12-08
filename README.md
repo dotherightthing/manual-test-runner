@@ -2,6 +2,10 @@
 
 Vue app to manually run UI tests.
 
+1. Test builder
+2. Test runner
+3. Test coverage matrix
+
 ## Project setup
 
 This project uses Vue CLI, to:
