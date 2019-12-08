@@ -2,7 +2,6 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   padding: 0;
   margin: 0;
@@ -30,16 +29,13 @@ h2 {
 
 .sidebar-1 {
   background-color: var(--color-fill-light);
-  text-align: left;
   grid-area: sidebar-1;
 }
 
 .content {
-  text-align: left;
   grid-area: content;
 }
 
 .sidebar-2 {
-  text-align: left;
   grid-area: sidebar-2;
 }
