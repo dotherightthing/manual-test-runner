@@ -12,7 +12,7 @@
       </li>
     </ul>
     <QuietStateWarning/>
-  </div>
+      </div>
 </template>
 
 <script>
@@ -21,12 +21,22 @@
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/6
    */
-  import QuietStateWarning from "@/components/QuietStateWarning";
 
   export default {
     name: 'PrimaryNav',
-    components: {
-      QuietStateWarning
+    computed: {
+      routeTestCreate() {
+        return this.$route.name === 'test-create';
+      },
+      routeTestRun() {
+        return this.$route.name === 'test-run';
+      },
+      routeTestDashboard() {
+        return this.$route.name === 'test-overview';
+      },
+      testId() {
+        return this.$route.params.id;
+      }
     }
   }
 </script>
@@ -76,5 +86,5 @@
       font-weight: bold;
     }
   }
-}
+  }
 </style>

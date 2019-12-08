@@ -9,15 +9,18 @@
 <script>
     /**
      * Quiet State Warning
+     * Originally used in main UI, but replaced with routes.
+     * Used here to control this component's visibility
+     * when it is used as a sub-component.
      */
     export default {
         name: 'QuietStateWarning',
         computed: {
             testModeState() {
-                return this.$store.state.testMode;
+                return this.$route.name.replace(/test-/, '');
             },
             quietState() {
-                return this.$store.getters.quiet;
+                return this.$route.name === 'test-run';
             }
         }
     }

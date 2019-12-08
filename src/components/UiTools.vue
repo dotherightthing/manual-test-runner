@@ -1,7 +1,5 @@
 <template>
-  <form class="b-tools">
-    <TestMode/>
-  </form>
+  <form class="b-tools"></form>
 </template>
 
 <script>
@@ -13,16 +11,11 @@
    * https://github.com/dotherightthing/manual-test-runner/issues/7
    */
 
-  import TestMode from '@/components/TestMode.vue'
-
   export default {
     name: 'UiTools',
     props: {
       section: String,
       page: String
-    },
-    components: {
-      TestMode
     }
   }
 </script>

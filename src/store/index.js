@@ -42,9 +42,6 @@ export default new Vuex.Store({
     //
     // it's common practice to use UPPERCASE or CamelCase here
     // to differentiate creating a mutation from calling an action
-    SET_TEST_MODE(state, mode) {
-      state.testMode = mode;
-    },
     ADD_TEST(state, test) {
       state.tests.push(test);
     }
@@ -52,17 +49,6 @@ export default new Vuex.Store({
   actions: {
     // Actions are asynchronous
 
-    /**
-     * Update Test Mode
-     *
-     * @param {object} {state, commit} - context object
-     * @param {string} mode - payload
-     */
-    updateTestMode({ state, commit }, mode) {
-      if (state.testMode) {
-        commit('SET_TEST_MODE', mode);
-      }
-    },
     /**
      * Create Test
      *
@@ -80,8 +66,5 @@ export default new Vuex.Store({
   },
   getters: {
     // getters can be used from anywhere in the application
-    quiet: state => {
-      return state.testMode === 'run'
-    }
   }
 })
