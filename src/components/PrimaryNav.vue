@@ -5,7 +5,10 @@
     </div>
     <ul class="b-primary-nav__list">
       <li class="b-primary-nav__list__item">
-        <router-link to="/" class="b-primary-nav__link">Tests</router-link>
+        <router-link to="/" class="b-primary-nav__link">Dashboard</router-link>
+      </li>
+      <li class="b-primary-nav__list__item">
+        <router-link to="/test/create" class="b-primary-nav__link">Create test</router-link>
       </li>
       <li class="b-primary-nav__list__item">
         <router-link to="/about" class="b-primary-nav__link">About</router-link>
