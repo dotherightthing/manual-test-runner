@@ -16,13 +16,13 @@
   align-items: baseline;
   grid-column-gap: .25rem;
 
+  label {
+    padding-top: var(--padding-sub-container);
+    padding-bottom: var(--padding-sub-container);
+  }
+
   &--toggle {
-    // @extend .l-form-radios; -- ?
-
     label {
-      padding-top: var(--padding-sub-container);
-      padding-bottom: var(--padding-sub-container);
-
       &:last-of-type {
         order: 1; // align right
       }

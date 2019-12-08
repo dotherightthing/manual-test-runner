@@ -1,6 +1,6 @@
 <template>
   <form class="b-tools">
-    <UiVerbosityControl uiVerbosity="this.uiVerbosity" @set-ui-verbosity="setUiVerbosity" />
+    <TestMode TestModeState="this.TestModeState" @set-test-mode="setTestModeState" />
   </form>
 </template>
 
@@ -13,24 +13,25 @@
    * https://github.com/dotherightthing/manual-test-runner/issues/7
    */
 
-  import UiVerbosityControl from './UiVerbosityControl.vue'
+  import TestMode from '@/components/TestMode.vue'
 
   export default {
     name: 'UiTools',
     props: {
       section: String,
       page: String,
-      uiVerbosity: String
+      TestModeState: String
     },
     components: {
-      UiVerbosityControl
+      TestMode
     },
     methods: {
-      setUiVerbosity: function (scope) {
+      // TODO maybe set initial state on the mount lifecycle hook
+      setTestModeState: function (scope) {
         // emit event to parent (App)
         // `this` inside methods points to the Vue instance
         // args can be passed as a second argument
-        this.$emit('set-ui-verbosity', scope);
+        this.$emit('set-test-mode', scope);
       }
     }
   }
