@@ -12,5 +12,6 @@
       "file": "index.html",
       "raw": "<label>This is another test</label>"
     }
-  ]
+  ],
+  "tests": []
 }
