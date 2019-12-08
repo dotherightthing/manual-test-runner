@@ -7,6 +7,7 @@
  * @uses axios - promise based HTTP client for the browser and node.js
  *  [Vue tutorial](https://www.vuemastery.com/courses/real-world-vue-js/API-calls-with-Axios)
  * @todo Watch the Vue tutorial that creates this file
+ * @todo finish watching https://www.vuemastery.com/courses/mastering-vuex/vuex-mutations-actions-1 from 14:09
  */
 
 import axios from 'axios'
