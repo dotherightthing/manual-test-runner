@@ -1,6 +1,6 @@
 <template>
   <form class="b-tools">
-    <TestMode TestModeState="this.TestModeState" @set-test-mode="setTestModeState" />
+    <TestMode/>
   </form>
 </template>
 
@@ -19,20 +19,10 @@
     name: 'UiTools',
     props: {
       section: String,
-      page: String,
-      TestModeState: String
+      page: String
     },
     components: {
       TestMode
-    },
-    methods: {
-      // TODO maybe set initial state on the mount lifecycle hook
-      setTestModeState: function (scope) {
-        // emit event to parent (App)
-        // `this` inside methods points to the Vue instance
-        // args can be passed as a second argument
-        this.$emit('set-test-mode', scope);
-      }
     }
   }
 </script>

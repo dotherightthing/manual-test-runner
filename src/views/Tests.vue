@@ -2,7 +2,7 @@
   <div class="tests">
     <div class="l-grid">
       <PrimaryNav class="header-nav" :aria-hidden="quietState" />
-      <UiTools class="header-controls" TestModeState="testModeState" />
+      <UiTools class="header-controls" />
       <div class="sidebar-1" :aria-hidden="quietState">
         <TestIntroduction title="Test Introduction" summary="Testing different kinds of elements." />
       </div>
@@ -42,16 +42,8 @@ export default {
   // props flow down and can't be changed
   // but data is the private memory of a component
   // and can be changed
-  data() {
-    return {
-      TestModeState: 'run' // default value
-    }
-  },
-  methods: {
-    setTestModeState(scope) {
-      this.TestModeState = scope;
-    }
-  },
+  // data() {}
+
   // computed properties abstract verbose and repetitive conditionals
   computed: {
     // see https://www.vuemastery.com/courses/mastering-vuex/vuex-state-getters 6:18
@@ -60,9 +52,6 @@ export default {
     // and merge in local computed properties
     quietState() {
       return this.$store.getters.quiet
-    },
-    testModeState() {
-      return this.$store.state.testMode;
     }
   }
 }
