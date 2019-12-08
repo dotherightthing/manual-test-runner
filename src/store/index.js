@@ -7,12 +7,33 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
+import TestService from '@/services/TestService.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    testMode: 'edit'
+    testMode: 'edit',
+    oses: [
+      'macOS 10.14.6',
+      'windows',
+      'iOS',
+      'Android'
+    ],
+    browsers: [
+      'chrome',
+      'edge',
+      'firefox',
+      'ie11',
+      'safari'
+    ],
+    ats: [
+      'jaws',
+      'narrator',
+      'nvda',
+      'voiceover'
+    ],
+    tests: []
   },
   mutations: {
     // Mutations are synchronous
@@ -23,6 +44,9 @@ export default new Vuex.Store({
     // to differentiate creating a mutation from calling an action
     SET_TEST_MODE(state, mode) {
       state.testMode = mode;
+    },
+    ADD_TEST(state, test) {
+      state.tests.push(test);
     }
   },
   actions: {
@@ -32,11 +56,23 @@ export default new Vuex.Store({
      * Update Test Mode
      *
      * @param {object} {state, commit} - context object
-     * @param {string} value - payload
+     * @param {string} mode - payload
      */
-    updateTestMode({ state, commit }, value) {
+    updateTestMode({ state, commit }, mode) {
       if (state.testMode) {
-        commit('SET_TEST_MODE', value);
+        commit('SET_TEST_MODE', mode);
+      }
+    },
+    /**
+     * Create Test
+     *
+     * @param {object} {commit} - context object
+     * @param {string} test - payload
+     */
+    createTest({ state, commit }, test) {
+      if (state.tests) {
+        TestService.postTest(test);
+        commit('ADD_TEST', test);
       }
     }
   },
