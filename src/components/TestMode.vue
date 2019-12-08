@@ -6,19 +6,19 @@
               <input
                 type="radio"
                 name="test_mode"
-                value="author"
-                id="test_mode_author"
-                @click="setTestModeState('author')"
-                :checked="this.TestModeState === 'author'" />
-              <label for="test_mode_author">Author</label>
+                value="edit"
+                id="test_mode_edit"
+                @click="setTestMode('edit')"
+                :checked="testModeEdit" />
+              <label for="test_mode_edit">Edit</label>
 
               <input
                 type="radio"
                 name="test_mode"
                 value="run"
                 id="test_mode_run"
-                @click="setTestModeState('run')"
-                :checked="this.TestModeState === 'run'" />
+                @click="setTestMode('run')"
+                :checked="testModeRun" />
               <label for="test_mode_run">Run</label>
 
               <input
@@ -26,10 +26,13 @@
                 name="test_mode"
                 value="coverage"
                 id="test_mode_coverage"
-                @click="setTestModeState('coverage')"
-                :checked="this.TestModeState === 'coverage'" />
+                @click="setTestMode('coverage')"
+                :checked="testModeCoverage" />
           </div>
           <label for="test_mode_coverage">Coverage</label>
+          <p v-if="testModeEdit" class="form__explanation">Authoring and editing tests</p>
+          <p v-if="testModeRun" class="form__explanation">Running tests</p>
+          <p v-if="testModeCoverage" class="form__explanation">Viewing test data</p>
 
       </fieldset>
   </form>
@@ -39,26 +42,36 @@
   /* eslint-disable no-console */
 
   /**
-   * UI Verbosity Control
+   * Test Mode
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/8
    */
 
   // export as a JavaScript module
-  // @todo neither radio button is selected onload
   export default {
     name: 'TestMode',
     props: {
-        TestModeState: String // this.TestMode
+        TestModeState: String
     },
     methods: {
         // <button type="button" @click="setTestMode">
         // v-on -> @
-        setTestModeState: function (scope) {
-            // emit event to parent (Tools)
-            // `this` inside methods points to the Vue instance
-            // args can be passed as a second argument
-            this.$emit('set-test-mode', scope);
+        setTestMode: function (mode) {
+            this.$store.commit('SET_TEST_MODE', mode );
+        }
+    },
+    computed: {
+        testModeEdit() {
+            return this.$store.state.testMode === 'edit';
+        },
+        testModeRun() {
+            return this.$store.state.testMode === 'run';
+        },
+        testModeCoverage() {
+            return this.$store.state.testMode === 'coverage';
+        },
+        testModeState() {
+            return this.$store.state.testMode;
         }
     }
   }
@@ -69,14 +82,5 @@
   .b-test-mode {
     padding: var(--padding-sub-container);
     margin: var(--margin-sub-container);
-
-    p {
-      color: var(--color-notification-quiet);
-      margin: 0;
-    }
-
-    form {
-        width: 100%;
-    }
   }
 </style>

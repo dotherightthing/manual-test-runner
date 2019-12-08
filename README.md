@@ -20,9 +20,7 @@ WebStorm: File > New > Project > Vue.js
 * Vue CLI: `/usr/local/lib/node_modules/@vue/cli`
 * Use the default project setup (`babel, eslint`)
 
-Note: The default project setup excludes `router` and `vuex` (reactive global state storage = single source of truth).
-
-These were install these via Vue UI's dedicated buttons at http://localhost:8000/plugins.
+Note: The default project setup excludes `router` and `vuex`, these were installed via Vue UI's dedicated buttons at http://localhost:8000/plugins.
 
 Also installed:
 

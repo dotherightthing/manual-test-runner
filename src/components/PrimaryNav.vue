@@ -1,5 +1,5 @@
 <template>
-  <div class="b-primary-nav">
+  <div class="b-primary-nav l-block-disabled__wrapper">
     <div class="b-primary-nav__logo">
       <router-link to="/" class="b-primary-nav__link">MTR</router-link>
     </div>
@@ -11,6 +11,7 @@
         <router-link to="/about" class="b-primary-nav__link">About</router-link>
       </li>
     </ul>
+    <QuietStateWarning/>
   </div>
 </template>
 
@@ -20,6 +21,14 @@
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/6
    */
+  import QuietStateWarning from "@/components/QuietStateWarning";
+
+  export default {
+    name: 'PrimaryNav',
+    components: {
+      QuietStateWarning
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

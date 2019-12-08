@@ -1,11 +1,12 @@
 <template>
-  <div class="b-test-introduction">
+  <div class="b-test-introduction l-block-disabled__wrapper">
     <h2 class="b-test-introduction__title">
       {{ title }}
     </h2>
     <p class="b-test-introduction__summary">
       {{ summary }}
     </p>
+    <QuietStateWarning/>
   </div>
 </template>
 
@@ -17,12 +18,16 @@
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/4
    */
+  import QuietStateWarning from "@/components/QuietStateWarning";
 
   export default {
     name: 'TestIntroduction',
     props: {
       title: String,
       summary: String
+    },
+    components: {
+      QuietStateWarning
     }
   }
 </script>
@@ -39,7 +44,7 @@
 
   &__summary {
     font-family: serif;
-    font-size: 1.1rem;
+    font-size: var(--text-large);
     margin-top: 0;
   }
 }
