@@ -5,17 +5,17 @@
       <FormSelect
         :id="'b-test-builder__input-os'"
         :label="'OS'"
-        :model="test.os"
+        v-model="test.os"
         :options="oses" />
       <FormSelect
         :id="'b-test-builder__input-browser'"
         :label="'Browser'"
-        :model="test.browser"
+        v-model="test.browser"
         :options="browsers" />
       <FormSelect
         :id="'b-test-builder__input-at'"
         :label="'AT'"
-        :model="test.at"
+        v-model="test.at"
         :options="ats" />
       <div>
         <label for="b-test-builder__input-step-1">Step 1</label>
@@ -31,6 +31,7 @@
    * Test Builder Form
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/11
+   * @todo Add support for merging data if user submits form between selections
    */
 
   import FormButton from "@/components/FormButton";
@@ -46,7 +47,7 @@
         oses: this.$store.state.oses,
         browsers: this.$store.state.browsers,
         ats: this.$store.state.ats,
-        test: this.createFreshTestObject()
+        test: this.createFreshTestObject(),
       }
     },
     methods: {
