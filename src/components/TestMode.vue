@@ -53,6 +53,7 @@
     props: {
         TestModeState: String
     },
+    // methods evaluate every time they're called.
     methods: {
         // <button type="button" @click="setTestMode">
         // v-on -> @
@@ -60,6 +61,7 @@
             this.$store.dispatch('updateTestMode', mode );
         }
     },
+      // computed properties are cached and only change when their dependencies change
     computed: {
         testModeEdit() {
             return this.$store.state.testMode === 'edit';

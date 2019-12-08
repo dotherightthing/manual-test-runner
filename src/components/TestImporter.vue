@@ -35,7 +35,7 @@ export default {
   created() {
     axios
       .get(`http://localhost:${process.env.VUE_APP_JSON_SERVER_PORT}/repos`)
-      .then(response => {
+      .then(response => { // asynchronous promise
         this.repos = response.data;
       })
       .catch(error => {
