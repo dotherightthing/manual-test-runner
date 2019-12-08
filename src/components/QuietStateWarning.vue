@@ -1,7 +1,7 @@
 <template>
     <div v-if="quietState" class="b-quiet-state-warning l-block-disabled__warning">
         <p>
-            This panel is disabled in {{ testModeState }} mode
+            Panel is disabled in {{ testModeState }} mode
         </p>
     </div>
 </template>
