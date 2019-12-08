@@ -12,7 +12,7 @@
       </li>
     </ul>
     <QuietStateWarning/>
-      </div>
+  </div>
 </template>
 
 <script>
@@ -21,6 +21,7 @@
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/6
    */
+  import QuietStateWarning from '@/components/QuietStateWarning.vue';
 
   export default {
     name: 'PrimaryNav',
@@ -37,6 +38,9 @@
       testId() {
         return this.$route.params.id;
       }
+    },
+    components: {
+      QuietStateWarning
     }
   }
 </script>
