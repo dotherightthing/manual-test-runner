@@ -1,8 +1,8 @@
 <template>
   <div class="b-test">
-    <h2>{{ msg }}</h2>
-    <TestImporter msg="Test importer"/>
-    <TestVersionSelector msg="Test version selector"/>
+    <h2 class="legend">Test fixture</h2>
+    <TestImporter msg="Import test fixture from Github"/>
+    <TestVersionSelector msg="Select fixture version"/>
     <TestViewer msg="Test viewer"/>
   </div>
 </template>
@@ -14,9 +14,6 @@
 
   export default {
   name: 'Test',
-  props: {
-    msg: String
-  },
   components: {
     TestImporter,
     TestVersionSelector,
