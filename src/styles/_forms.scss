@@ -1,3 +1,11 @@
+form {
+  width: 100%;
+
+  p {
+    margin: 0;
+  }
+}
+
 fieldset {
   padding: 0;
   border: 0;
@@ -13,4 +21,11 @@ legend,
 
 label {
   cursor: pointer;
+}
+
+.form {
+  &__explanation {
+    font-size: var(--text-small);
+    font-style: italic;
+  }
 }
