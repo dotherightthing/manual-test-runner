@@ -2,10 +2,11 @@
   <form class="b-test-importer b-panel">
     <fieldset>
       <legend>{{ msg }}</legend>
-      <select>
-        <option v-for="repo in repos" :key="repo.name" :value="repo.name">{{repo.title}}</option>
-      </select>
-      <button type="button">Import</button>
+      <FormSelect
+        :id="'b-test-importer-input'"
+        :label="'Select test'"
+        :options="reposArray" />
+      <FormButton :type="'button'" :value="'Import'" />
     </fieldset>
   </form>
 </template>
@@ -19,6 +20,8 @@
    * https://github.com/dotherightthing/manual-test-runner/issues/3
    */
   import axios from 'axios';
+  import FormSelect from "@/components/FormSelect";
+  import FormButton from "@/components/FormButton";
 
 export default {
   name: 'TestImporter',
@@ -41,6 +44,21 @@ export default {
       .catch(error => {
         console.log(error.response);
       });
+  },
+  computed: {
+    reposArray() {
+      const reposArray = [];
+
+      for (let repo of this.repos) {
+        reposArray.push(repo.title);
+      }
+
+      return reposArray;
+    }
+  },
+  components: {
+    FormSelect,
+    FormButton
   }
 }
 </script>

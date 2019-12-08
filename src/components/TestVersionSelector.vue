@@ -1,11 +1,12 @@
 <template>
-  <form class="b-test-version-selector">
+  <form class="b-test-version-selector b-panel">
     <fieldset>
       <legend>{{ msg }}</legend>
-      <select>
-        <option>Test version</option>
-      </select>
-      <button type="button">Import</button>
+      <FormSelect
+        :id="'b-test-version-selector-input'"
+        :label="'Select version'"
+        :options="versions" />
+      <FormButton :type="'button'" :value="'Import'" />
     </fieldset>
   </form>
 </template>
@@ -16,18 +17,33 @@
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/5
    */
-export default {
-  name: 'TestVersionSelector',
-  props: {
-    msg: String
+  import FormSelect from "@/components/FormSelect";
+  import FormButton from "@/components/FormButton";
+
+  export default {
+    name: 'TestVersionSelector',
+    props: {
+      msg: String
+    },
+    // data function
+    data() {
+      return {
+        // reactive property
+        versions: [
+          '1.0',
+          '1.1'
+        ]
+      }
+    },
+    components: {
+      FormSelect,
+      FormButton
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .b-test-version-selector {
-    padding: var(--padding-sub-container);
-    border: var(--component-border);
   }
 </style>

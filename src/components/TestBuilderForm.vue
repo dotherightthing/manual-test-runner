@@ -2,35 +2,26 @@
   <form class="b-test-builder-form b-panel" @submit.prevent="createTest">
     <fieldset>
       <legend>Test builder</legend>
-      <div>
-        <label for="b-test-builder__input-os">OS</label>
-        <select v-model="test.os" id="b-test-builder__input-os">
-          <option v-for="os in oses" :key="os">
-            {{ os }}
-          </option>
-        </select>
-      </div>
-      <div>
-        <label for="b-test-builder__input-browser">Browser</label>
-        <select v-model="test.browser" id="b-test-builder__input-browser">
-          <option v-for="browser in browsers" :key="browser">
-            {{ browser }}
-          </option>
-        </select>
-      </div>
-      <div>
-        <label for="b-test-builder__input-at">AT</label>
-        <select v-model="test.at" id="b-test-builder__input-at">
-          <option v-for="at in ats" :key="at">
-            {{ at }}
-          </option>
-        </select>
-      </div>
+      <FormSelect
+        :id="'b-test-builder__input-os'"
+        :label="'OS'"
+        :model="test.os"
+        :options="oses" />
+      <FormSelect
+        :id="'b-test-builder__input-browser'"
+        :label="'Browser'"
+        :model="test.browser"
+        :options="browsers" />
+      <FormSelect
+        :id="'b-test-builder__input-at'"
+        :label="'AT'"
+        :model="test.at"
+        :options="ats" />
       <div>
         <label for="b-test-builder__input-step-1">Step 1</label>
         <textarea v-model="test.step" id="b-test-builder__input-step-1"></textarea>
       </div>
-      <input type="submit" value="Add test"/>
+      <FormButton :type="'submit'" :value="'Add test'" />
     </fieldset>
   </form>
 </template>
@@ -41,6 +32,9 @@
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/11
    */
+
+  import FormButton from "@/components/FormButton";
+  import FormSelect from "@/components/FormSelect";
 
   export default {
     name: 'TestBuilderForm',
@@ -70,6 +64,10 @@
       createTest() {
         this.$store.dispatch('createTest', this.test);
       }
+    },
+    components: {
+      FormButton,
+      FormSelect
     }
   }
 </script>
