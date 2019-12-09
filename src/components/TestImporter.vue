@@ -3,8 +3,8 @@
     <fieldset>
       <legend>{{ msg }}</legend>
       <FormSelect
-        :id="'b-test-importer-input'"
-        :label="'Select test'"
+        id="b-test-importer-input"
+        label="Test"
         :options="reposArray" />
       <FormButton :type="'button'" :value="'Import'" />
     </fieldset>
@@ -18,6 +18,7 @@
    * Test Importer
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/3
+   * @todo Add v-model
    */
   import axios from 'axios';
   import FormSelect from "@/components/FormSelect";

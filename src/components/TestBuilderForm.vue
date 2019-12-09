@@ -3,25 +3,29 @@
     <fieldset>
       <legend>Test builder</legend>
       <FormSelect
-        :id="'b-test-builder__input-os'"
-        :label="'OS'"
+        id="b-test-builder__input-os"
+        label="OS"
+        placeholder="Select an option"
         v-model="test.os"
         :options="oses" />
       <FormSelect
-        :id="'b-test-builder__input-browser'"
-        :label="'Browser'"
+        id="b-test-builder__input-browser"
+        label="Browser"
         v-model="test.browser"
         :options="browsers" />
       <FormSelect
-        :id="'b-test-builder__input-at'"
-        :label="'AT'"
+        id="b-test-builder__input-at"
+        label="AT"
         v-model="test.at"
         :options="ats" />
-      <div>
-        <label for="b-test-builder__input-step-1">Step 1</label>
-        <textarea v-model="test.step" id="b-test-builder__input-step-1"></textarea>
-      </div>
-      <FormButton :type="'submit'" :value="'Add test'" />
+      <FormTextarea
+        id="b-test-builder__input-step-1"
+        label="Step 1"
+        placeholder="Describe the step"
+        v-model="test.step" />
+      <FormButton
+        type="submit"
+        value="Add test" />
     </fieldset>
   </form>
 </template>
@@ -36,6 +40,7 @@
 
   import FormButton from "@/components/FormButton";
   import FormSelect from "@/components/FormSelect";
+  import FormTextarea from "@/components/FormTextarea";
 
   export default {
     name: 'TestBuilderForm',
@@ -68,7 +73,8 @@
     },
     components: {
       FormButton,
-      FormSelect
+      FormSelect,
+      FormTextarea
     }
   }
 </script>

@@ -3,8 +3,8 @@
     <fieldset>
       <legend>{{ msg }}</legend>
       <FormSelect
-        :id="'b-test-version-selector-input'"
-        :label="'Select version'"
+        id="b-test-version-selector-input"
+        label="Version"
         :options="versions" />
       <FormButton :type="'button'" :value="'Import'" />
     </fieldset>
@@ -16,6 +16,7 @@
    * Test Version Selector
    *
    * https://github.com/dotherightthing/manual-test-runner/issues/5
+   * @todo Add v-model
    */
   import FormSelect from "@/components/FormSelect";
   import FormButton from "@/components/FormButton";
